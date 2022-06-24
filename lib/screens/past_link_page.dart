@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:tube_downloader/widgets/custom_tile.dart';
 import 'package:youtube_metadata/youtube_metadata.dart';
 
-import '../downloader.dart';
+import '../services/downloader.dart';
 import '../services/get_shared_data.dart';
 import '../services/theme.dart';
 import '../widgets/bottom_sheet.dart';

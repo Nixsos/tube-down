@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tube_downloader/downloader.dart';
-import 'package:tube_downloader/services/theme.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../widgets/bottom_sheet.dart';
+import '../services/downloader.dart';
+import '../services/theme.dart';
 
 class BrowserPage extends StatefulWidget {
   const BrowserPage({Key? key}) : super(key: key);
