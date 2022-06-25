@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tube_downloader/services/theme.dart';
 
+// ignore: must_be_immutable
 class CustomTile extends StatelessWidget {
   String vidTitle;
   String thumbnailUrl;
