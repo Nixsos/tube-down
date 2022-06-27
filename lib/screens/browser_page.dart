@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -14,29 +16,15 @@ class BrowserPage extends StatefulWidget {
 }
 
 class _BrowserPageState extends State<BrowserPage> {
-  final link = "https://www.youtube.com";
-  late WebViewController _webViewController;
-
-  final _showDownloadButton = false;
-  void _checkURLEmpty() async {
-    if (await _webViewController.currentUrl() == "https://m.youtube.com/") {
-      setState(() {
-        _showDownloadButton == false;
-      });
-    } else {
-      setState(() {
-        _showDownloadButton == true;
-      });
-    }
-  }
+  final link = 'https://m.youtube.com/';
+  WebViewController? _webViewController;
 
   @override
   Widget build(BuildContext context) {
-    _checkURLEmpty();
     return WillPopScope(
       onWillPop: () async {
-        if (await _webViewController.canGoBack()) {
-          _webViewController.goBack();
+        if (await _webViewController!.canGoBack()) {
+          _webViewController!.goBack();
         }
         return false;
       },
@@ -44,24 +32,28 @@ class _BrowserPageState extends State<BrowserPage> {
         body: WebView(
           initialUrl: link,
           javascriptMode: JavascriptMode.unrestricted,
-          onWebViewCreated: (controller) {
+          onWebViewCreated: (WebViewController controller) {
             setState(() {
               _webViewController = controller;
             });
           },
         ),
-        floatingActionButton: _showDownloadButton
-            ? Container()
-            : FloatingActionButton(
-                backgroundColor: redish,
-                onPressed: () async {
-                  final url = await _webViewController.currentUrl();
-                  final title = await _webViewController.getTitle();
-                  _showDownloadButton == false;
-                  _choseQuality(url!, title!);
-                },
-                child: Icon(Icons.download),
-              ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: redish,
+          onPressed: () async {
+            //print(await _webViewController!.currentUrl());
+            final url = await _webViewController!.currentUrl();
+            final title = await _webViewController!.getTitle();
+
+            if (url == "https://m.youtube.com/") {
+              selectVidSnackBar();
+              return;
+            } else {
+              _choseQuality(url!, title!);
+            }
+          },
+          child: Icon(Icons.download),
+        ),
       ),
     );
   }
@@ -157,6 +149,19 @@ class _BrowserPageState extends State<BrowserPage> {
       icon: Icon(Icons.person, color: Colors.white),
       snackPosition: SnackPosition.BOTTOM,
       backgroundColor: Colors.green,
+      colorText: Colors.white,
+      borderRadius: 10,
+      margin: EdgeInsets.all(10),
+    );
+  }
+
+  void selectVidSnackBar() {
+    Get.snackbar(
+      "Error",
+      "Please Select A VideoFirst",
+      icon: Icon(Icons.person, color: Colors.white),
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: redish,
       colorText: Colors.white,
       borderRadius: 10,
       margin: EdgeInsets.all(10),

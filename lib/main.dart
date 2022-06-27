@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'screens/home_page.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
+  //WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
