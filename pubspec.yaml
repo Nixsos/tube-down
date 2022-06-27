@@ -48,14 +48,14 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.0
-  flutter_launcher_icons: ^0.9.3
+  #flutter_launcher_icons: ^0.9.3
 
-flutter_icons: 
-  android: true
-  ios: true
-  image_path: "assets/logo_tube_down.png"
-  adaptive_icon_foreground: "assets/logo_foreground.png"
-  adaptive_icon_background: "#ffffff"
+# flutter_icons: 
+#   android: true
+#   ios: true
+#   image_path: "assets/logo_tube_down.png"
+  #adaptive_icon_foreground: "assets/logo_foreground.png"
+  #adaptive_icon_background: "#ffffff"
 
 
 
