@@ -1,16 +1,29 @@
-# tube_downloader
+# Tube_downloader
 
-A new Flutter project.
+A Youtube Donwloader using flutter framework.
 
-## Getting Started
+This App was built using :
 
-This project is a starting point for a Flutter application.
+-[flutter_youtube_downloader: ^0.0.1](https://pub.dev/packages/flutter_youtube_downloader/versions/0.0.1/) Package.
 
-A few resources to get you started if this is your first Flutter project:
+-[youtube_metadata: ^1.0.1](https://pub.dev/packages/youtube_metadata) Package.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Screens
+
+### The Main app window
+ <img src="https://user-images.githubusercontent.com/49596893/176694043-f4cc9326-0a1f-4ec3-a113-5478da220bea.png" width="400" height="800">
+ 
+### When you past a youtube link and click download you canchose the quality of the video
+ <img src="https://user-images.githubusercontent.com/49596893/176694083-19fcef83-817d-4225-a309-13aac5a2cd35.png" width="400" height="800">
+
+
+### You can share a Youtube link from youtube 
+ <img src="https://user-images.githubusercontent.com/49596893/176694047-3a961489-647e-435b-8108-822f7a3784b0.png" width="400" height="800">
+
+
+### You also have a built in youtube browser to download from it
+ <img src="https://user-images.githubusercontent.com/49596893/176693989-b327f045-ed3b-4f6f-9704-b64acedc9e19.png" width="400" height="800">
+
+
